@@ -1,0 +1,17 @@
+<div class="container">
+  <flash-message></flash-message>
+  <form class="login-form">
+    <div class=" imgcontainer">
+      <img src="../images/user.png" alt="Avatar" class="avatar">
+    </div>
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text"  ng-model="userId" placeholder="Enter UserId"
+      class="login-input" name="uname" required>
+      <button class="login-button" type="submit" ng-click="getUser(userId)">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+  </form>
+</div>

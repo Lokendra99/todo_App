@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-App="wigzoApp">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wigzo ToDo App</title>
+    <link rel="stylesheet" href="libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+
+  <body>
+    <nav ng-controller="homeController" class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">ToDoApp</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ng-if="userId!==null">User ID: {{userId}}</a></li>
+          <li><a href="#!logout" ng-if="userId!==null">Log Out</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="ng-view"></div>
+
+    <script src="libraries/jquery/jquery3.3.1.min.js"></script>
+    <script src="libraries/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="libraries/angular/angular1.6.4.min.js"></script>
+    <script src="libraries/angular/angular-route.min.js"></script>
+    <script src="libraries/angular/angular-flash.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="services/storage.service.js"></script>
+    <script type="text/javascript" src="services/feed.service.js"></script>
+    <script type="text/javascript" src="routes/routes.js"></script>
+    <script type="text/javascript" src="controllers/home.Controller.js"></script>
+    <script type="text/javascript" src="controllers/login.Controller.js"></script>
+    <script type="text/javascript" src="controllers/user.Controller.js"></script>
+    <script type="text/javascript" src="controllers/editTask.Controller.js"></script>
+    <script type="text/javascript" src="controllers/logOut.Controller.js"></script>
+  </body>
+</html>

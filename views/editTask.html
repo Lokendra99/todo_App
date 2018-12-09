@@ -1,0 +1,43 @@
+<div class="container">
+  <flash-message></flash-message>
+  <div ng-hide="taskUpdate" class="well">
+    <h4>Update Task</h4>
+    <form ng-submit="editTask(task.id)">
+      <div class="form-group">
+      <label for="title">Task Title:</label>
+      <input type="text" class="form-control" ng-value="task.title" ng-model="taskTitle">
+      </div>
+      <div class="form-group">
+        <label for="Status">Task Status</label>
+        <input type="text" class="form-control" ng-value="task.completed"  ng-model="taskStatus">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Update Now</button>
+      </div>
+    </form>
+  </div>
+  <div>
+    <table  ng-if="taskUpdate" class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Updated Task</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Task ID</td>
+          <td>{{upatedTask.id}}</td>
+        </tr>
+        <tr>
+          <td>Task Title</td>
+          <td>{{upatedTask.title}}</td>
+        </tr>
+        <tr>
+          <td>Task Status</td>
+          <td>{{upatedTask.completed}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

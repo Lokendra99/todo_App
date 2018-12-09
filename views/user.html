@@ -1,0 +1,71 @@
+<div class="container">
+  <flash-message></flash-message>
+  <div class="well">
+    <h4>New Task</h4>
+    <form ng-submit="addNewTask()">
+      <div class="form-group">
+      <label for="title">Task Title:</label>
+      <input type="text" class="form-control" ng-model="taskTitle" required>
+      </div>
+      <div class="form-group">
+        <label for="Status">Task Status</label>
+        <input type="text" class="form-control" ng-model="taskStatus" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add New</button>
+      </div>
+    </form>
+  </div>
+  <div>
+    <table  ng-if="newTaskAdded" class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>New Task</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Task ID</td>
+          <td>{{newTaskAdded.id}}</td>
+        </tr>
+        <tr>
+          <td>Task Title</td>
+          <td>{{newTaskAdded.title}}</td>
+        </tr>
+        <tr>
+          <td>Task Status</td>
+          <td>{{newTaskAdded.completed}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table ng-repeat="task in tasks" class="table table-hover table-bordered"
+      ng-hide="deletedTask==task.id">
+        <thead>
+          <tr>
+            <th>TASK</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Task ID</td>
+            <td>{{task.id}}</td>
+          </tr>
+          <tr>
+            <td>Task Title</td>
+            <td>{{task.title}}</td>
+          </tr>
+          <tr>
+            <td>Task Status</td>
+            <td>{{task.completed}}</td>
+          </tr>
+          <tr>
+          <td><a href="#!editTask/{{userId}}/{{task.id}}"><button type="button" class="btn btn-success">Edit</td></a>
+          <td><button type="button" ng-click="deleteTask(task.id)"" class="btn btn-danger">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
